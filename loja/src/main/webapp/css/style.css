@@ -27,3 +27,7 @@ ul>li {
 .title-table {
 	font-style: italic;
 }
+
+.ativo {
+	border-bottom: 2px solid #A7A7A7;
+}
