@@ -2,10 +2,13 @@ package br.com.loja.controller;
 
 import java.util.List;
 
+import br.com.caelum.vraptor.Delete;
+import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
-import br.com.caelum.vraptor.validator.ValidationMessage;
 import br.com.loja.dao.ProdutoDAO;
 import br.com.loja.modelo.Produto;
 
@@ -22,7 +25,7 @@ public class ProdutoController {
     private final Result result;
 
     /** The validate. */
-    private final Validator validate;
+    private final Validator validator;
 
     /**
      * Instantiates a new produto controller.
@@ -32,13 +35,22 @@ public class ProdutoController {
     public ProdutoController(ProdutoDAO dao, Result result, Validator validade) {
         this.dao = dao;
         this.result = result;
-        this.validate = validade;
+        this.validator = validade;
     }
 
     /**
      * Formulario.
      */
+    @Get("/produtos/novo")
     public void formulario() {
+    }
+    
+    /**
+     * Index.
+     */
+    @Get("/index")
+    public void index() {
+        
     }
 
     /**
@@ -46,6 +58,7 @@ public class ProdutoController {
      *
      * @return the list
      */
+    @Get("/produtos")
     public List<Produto> lista() {
         return dao.listaTudo();
     }
@@ -55,17 +68,10 @@ public class ProdutoController {
      *
      * @param produto the produto
      */
+    @Post("/produtos")
     public void adiciona(Produto produto) {
-        if (produto.getNome() == null || produto.getNome().length() < 3) {
-            validate.add(new ValidationMessage("Nome é obrigatório e precisa ter mais" + " de 3 letras", "produto.nome"));
-        }
-        if (produto.getDescricao() == null || produto.getDescricao().length() > 40) {
-            validate.add(new ValidationMessage("Descrição é obrigatória não pode ter mais" + " que 40 letras", "produto.descricao"));
-        }
-        if (produto.getPreco() <= 0) {
-            validate.add(new ValidationMessage("Preço precisa ser positivo", "produto.preco"));
-        }
-        validate.onErrorUsePageOf(this).formulario();
+        validator.validate(produto);
+        validator.onErrorUsePageOf(this).formulario();
         this.dao.save(produto);
         this.result.redirectTo(this).lista();
     }
@@ -76,6 +82,7 @@ public class ProdutoController {
      * @param id the id
      * @return the produto
      */
+    @Get("/produtos/{id}")
     public Produto edita(Long id) {
         return dao.buscaPorId(id);
     }
@@ -85,6 +92,7 @@ public class ProdutoController {
      *
      * @param produto the produto
      */
+    @Put("/produtos/{produto.id}")
     public void altera(Produto produto) {
         dao.edit(produto);
         result.redirectTo(this).lista();
@@ -95,6 +103,7 @@ public class ProdutoController {
      *
      * @param id the id
      */
+    @Delete("/produtos/{id}")
     public void remove(Long id) {
         Produto produto = dao.buscaPorId(id);
         dao.delete(produto);

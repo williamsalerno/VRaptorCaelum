@@ -1,0 +1,29 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	font-family: helvetica;
+}
+
+.forms-adc, .forms-alter {
+	max-width: 600px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+ul>li {
+	list-style: none;
+}
+
+.errors {
+	left: 0;
+	right: 0;
+	margin: auto;
+	max-width: 400px;
+	text-align: center;
+	margin-left: 79px;
+}
+
+.title-table {
+	font-style: italic;
+}

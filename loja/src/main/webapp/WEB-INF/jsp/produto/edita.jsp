@@ -1,26 +1,90 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<form action="altera">
-		<fieldset>
-			<legend>Editar Produto</legend>
-			<input type="hidden" name="produto.id" value="${produto.id }" /> <label
-				for="nome">Nome:</label> <input id="nome" type="text"
-				name="produto.nome" value="${produto.nome }" /> <label
-				for="descricao">Descrição:</label>
-			<textarea id="descricao" name="produto.descricao"> ${produto.descricao } </textarea>
-
-			<label for="preco">Preço:</label> <input id="preco" type="text"
-				name="produto.preco" value="${produto.preco }" />
-
-			<button type="submit">Enviar</button>
+<%@ include file="/WEB-INF/jspf/header.jspf"%>
+<div class="container">
+	<div class="container">
+		<div class="page-header">
+			<h1>
+				Adicionar um produto <small>preencha todos os campos!</small>
+			</h1>
+		</div>
+	</div>
+	<form class="forms-alter"
+		action="<c:url value="/produtos/${produto.id }"/>" method="POST">
+		<fieldset class="form-group">
+			<label for="nome">Nome do produto</label> <input type="text"
+				class="form-control" id="nome" name="produto.nome"
+				placeholder="Digite o nome do produto" value="${produto.nome }">
+			<small class="text-muted">Campo obrigatório</small>
 		</fieldset>
+		<!-- <fieldset class="form-group">
+		    <label for="exampleInputPassword1"></label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </fieldset> -->
+		<!-- <fieldset class="form-group">
+		    <label for="exampleSelect1">Example select</label>
+		    <select class="form-control" id="exampleSelect1">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+		  </fieldset> -->
+		<!--<fieldset class="form-group">
+		    <label for="exampleSelect2">Example multiple select</label>
+		    <select multiple class="form-control" id="exampleSelect2">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+		  </fieldset> -->
+		<fieldset class="form-group">
+			<label for="preco">Preço do produto</label> <input type="number"
+				step="0.10" class="form-control" id="preco" name="produto.preco"
+				placeholder="Digite o Preço do produto" value="${produto.preco }">
+			<small class="text-muted">Campo obrigatório</small>
+		</fieldset>
+		<fieldset class="form-group">
+			<label for="descricao">Descrição do produto</label>
+			<textarea class="form-control" id="descricao"
+				name="produto.descricao" rows="3">${produto.descricao }</textarea>
+			<small class="text-muted">Campo obrigatório</small>
+		</fieldset>
+		<!-- <fieldset class="form-group">
+		    <label for="exampleInputFile">File input</label>
+		    <input type="file" class="form-control-file" id="exampleInputFile">
+		    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+		  </fieldset>  -->
+		<!-- <div class="radio">
+		    <label>
+		      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+		      Option one is this and that&mdash;be sure to include why it's great
+		    </label>
+		  </div>  -->
+		<!--<div class="radio">
+		    <label>
+		      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		      Option two can be something else and selecting it will deselect option one
+		    </label>
+		  </div> -->
+		<!--<div class="radio disabled">
+		    <label>
+		      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+		      Option three is disabled
+		    </label>
+		  </div>-->
+		<!--<div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		  </div>-->
+		<form action="<c:url value="/produtos/${produto.id }"/>" method="POST">
+			<button type="submit" class="btn btn-primary" name="_method" value="PUT">
+				<span class="glyphicon glyphicon glyphicon-floppy-save"
+					aria-hidden="true"></span> Salvar alterações
+			</button>
+		</form>
 	</form>
-</body>
-</html>
+</div>
+<%@ include file="/WEB-INF/jspf/footer.jspf"%>

@@ -1,0 +1,8 @@
+<script type="text/javascript">
+	$('ul.nav li.menu-item a').click(function() {
+		$('ul.nav li.active').removeClass('active');
+		$(this).closest('li.menu-item').addClass('active');
+	});
+</script>
+</body>
+</html>

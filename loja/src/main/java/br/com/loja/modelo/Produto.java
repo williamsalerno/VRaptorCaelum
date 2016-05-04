@@ -3,6 +3,10 @@ package br.com.loja.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 /**
  * The Class Produto.
@@ -15,12 +19,18 @@ public class Produto {
     private Long id;
     
     /** The nome. */
+    @NotNull (message = "O nome deve ser preenchido!")
+    @Length(min = 3, message = "O nome deve conter mais de 3 caracteres!")
     private String nome;
     
     /** The descricao. */
+    @NotNull (message = "A descrição deve ser preenchida!")
+    @Length(max = 40, message = "A descrição deve conter no máximo 40 caracteres!")
     private String descricao;
     
     /** The preco. */
+    @NotNull (message = "O preço deve ser preenchido!")
+    @Min(value = 0, message = "O produto não pode ser grátis!")
     private Double preco;
 
     /**
