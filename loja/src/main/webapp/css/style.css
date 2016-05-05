@@ -29,5 +29,86 @@ ul>li {
 }
 
 .ativo {
-	border-bottom: 2px solid #A7A7A7;
+	border-bottom: 2px solid #FFA000;
+}
+
+.navbar-custom {
+	background-color: #607D8B;
+	border-radius: 0px !important;
+}
+
+li.menu-item>a {
+	color: white;
+}
+
+li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover {
+	background-color: transparent !important;
+}
+
+.dropdown-toggle {
+	color: white !important;
+}
+
+.navbar-brand {
+	color: white;
+}
+
+.slide-tab {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 4px;
+	background: #4FC2E5;
+	transition: all 0.5s;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	background-color: transparent !important;
+}
+
+.responsive-menu-button {
+	background-color: #FFA000 !important;
+}
+
+.ripple {
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.4);
+	-webkit-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	position: absolute;
+	opacity: 1;
+}
+
+.rippleEffect {
+	-webkit-animation: rippleDrop .6s linear;
+	animation: rippleDrop .6s linear;
+}
+
+@
+-webkit-keyframes
+	rippleDrop {
+		100% {
+			-webkit-transform: scale(2);
+			transform: scale(2);
+			opacity: 0;
+	}
+}
+
+@keyframes
+	rippleDrop { 
+		100% {
+			-webkit-transform: scale(2);
+			transform: scale(2);
+			opacity: 0;
+	}
+}
+
+@media (min-width: 768px) {
+.navbar-nav {
+		margin-bottom: -1px !important;
+	}
 }
