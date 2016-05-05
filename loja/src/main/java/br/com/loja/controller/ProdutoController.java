@@ -9,6 +9,7 @@ import br.com.caelum.vraptor.Put;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
+import br.com.caelum.vraptor.view.Results;
 import br.com.loja.dao.ProdutoDAO;
 import br.com.loja.modelo.Produto;
 
@@ -54,6 +55,17 @@ public class ProdutoController {
     }
 
     /**
+     * Busca.
+     *
+     * @param nome the nome
+     * @return the list
+     */
+    public List<Produto> busca(String nome) {
+        result.include("nome", nome);
+        return dao.busca(nome);
+    }
+    
+    /**
      * Lista.
      *
      * @return the list
@@ -63,6 +75,16 @@ public class ProdutoController {
         return dao.listaTudo();
     }
 
+    /**
+     * Busca json.
+     *
+     * @param q the q
+     */
+    @Get("/produtos/busca.json")
+    public void buscaJson(String q) {
+        result.use(Results.json()).withoutRoot().from(dao.busca(q)).exclude("id", "descricao").serialize();
+    }
+    
     /**
      * Adiciona.
      *

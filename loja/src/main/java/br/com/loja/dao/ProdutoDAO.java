@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.loja.modelo.Produto;
@@ -76,6 +78,26 @@ public class ProdutoDAO {
      */
     public Produto buscaPorId(Long id) {
         return (Produto) this.session.load(Produto.class, id);
+    }
+
+    /**
+     * Busca.
+     *
+     * @param nome the nome
+     * @return the list
+     */
+    @SuppressWarnings("unchecked")
+    public List<Produto> busca(String nome) {
+        return session.createCriteria(Produto.class).add(Restrictions.ilike("nome", nome, MatchMode.ANYWHERE)).list();
+    }
+
+    /**
+     * Recarrega.
+     *
+     * @param produto the produto
+     */
+    public void recarrega(Produto produto) {
+        session.refresh(produto);
     }
 
 }

@@ -7,7 +7,7 @@
 			</h1>
 		</div>
 	</div>
-	<form class="forms-alter"
+	<form id="produtosForm" class="forms-alter"
 		action="<c:url value="/produtos/${produto.id }"/>" method="POST">
 		<fieldset class="form-group">
 			<label for="nome">Nome do produto</label> <input type="text"

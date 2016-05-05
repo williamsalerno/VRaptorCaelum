@@ -3,7 +3,9 @@
 	<div class="page-header">
 		<h1>Lista de produtos</h1>
 	</div>
-
+	<c:if test="${not empty nome}">
+		<h3>Resultado da busca por nome: ${nome }</h3>
+	</c:if>
 	<div class="bs-example" data-example-id="table-within-panel">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -21,6 +23,7 @@
 						<th>Nome</th>
 						<th>Descrição</th>
 						<th>Preço</th>
+						<th>Comprar</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -33,6 +36,13 @@
 							<td>${produto.descricao }</td>
 
 							<td>${produto.preco }</td>
+							<td>
+								<form action="<c:url value="/carrinho"/>" method="POST">
+									<input type="hidden" name="item.produto.id" value="${produto.id }">
+									<input type="number" step="1" class="qtde" name="item.quantidade" value="1"/>
+									<button name="comprar" class="btn btn-success" type="submit">Comprar</button>
+								</form>
+							</td>
 							<td><a class="btn btn-primary"
 								href="<c:url value="/produtos/${produto.id}"/>"><span
 									class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>

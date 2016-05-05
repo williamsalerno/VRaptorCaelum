@@ -21,7 +21,6 @@ ul>li {
 	margin: auto;
 	max-width: 400px;
 	text-align: center;
-	margin-left: 79px;
 }
 
 .title-table {
@@ -29,7 +28,7 @@ ul>li {
 }
 
 .ativo {
-	border-bottom: 2px solid #FFA000;
+	border-bottom: 3px solid #FFA000;
 }
 
 .navbar-custom {
@@ -41,7 +40,8 @@ li.menu-item>a {
 	color: white;
 }
 
-li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover {
+li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover, li.menu-item>a:active
+	{
 	background-color: transparent !important;
 }
 
@@ -51,6 +51,34 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover {
 
 .navbar-brand {
 	color: white;
+}
+
+.menu-item {
+	margin-top: 3px;
+	border-left: 1px solid #737373;
+}
+
+.menu-item-dropdown {
+	border-right: 1px solid #737373;
+}
+
+.shopping-cart {
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.cart-li::after {
+	content: attr(data-content) ' 0';
+	color: white;
+	font-weight: bold;
+	background-color: #6CD66C;
+	border-radius: 50%;
+	padding: 1px 7px;
+	position: relative;
+	float: right;
+	margin-left: -11px;
+	margin-top: -5px;
 }
 
 .slide-tab {
@@ -90,25 +118,24 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover {
 
 @
 -webkit-keyframes
-	rippleDrop {
-		100% {
-			-webkit-transform: scale(2);
-			transform: scale(2);
-			opacity: 0;
-	}
+	rippleDrop { 100% {
+	-webkit-transform: scale(2);
+	transform: scale(2);
+	opacity: 0;
 }
 
-@keyframes
-	rippleDrop { 
-		100% {
-			-webkit-transform: scale(2);
-			transform: scale(2);
-			opacity: 0;
-	}
+}
+@
+keyframes
+	rippleDrop { 100% {
+	-webkit-transform: scale(2);
+	transform: scale(2);
+	opacity: 0;
 }
 
-@media (min-width: 768px) {
-.navbar-nav {
+}
+@media ( min-width : 768px) {
+	.navbar-nav {
 		margin-bottom: -1px !important;
 	}
 }

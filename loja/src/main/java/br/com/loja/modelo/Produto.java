@@ -3,7 +3,7 @@ package br.com.loja.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -30,7 +30,7 @@ public class Produto {
     
     /** The preco. */
     @NotNull (message = "O preço deve ser preenchido!")
-    @Min(value = 0, message = "O produto não pode ser grátis!")
+    @DecimalMin(value = "1", message = "O produto não pode ser grátis")
     private Double preco;
 
     /**

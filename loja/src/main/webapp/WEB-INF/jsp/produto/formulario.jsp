@@ -17,11 +17,11 @@
 			</c:forEach>
 		</ul>
 	</div>
-	<form class="forms-adc" action="<c:url value="/produtos"/>" method="POST">
+	<form id="produtosForm" class="forms-adc" action="<c:url value="/produtos"/>" method="POST">
 		<fieldset class="form-group">
 			<label for="nome">Nome do produto</label> <input type="text"
 				class="form-control" id="nome" name="produto.nome"
-				placeholder="Digite o nome do produto" value="${produto.nome }">
+				placeholder="Digite o nome do produto" minlength="3" value="${produto.nome }">
 			<small class="text-muted">Campo obrigatório</small>
 		</fieldset>
 		<!-- <fieldset class="form-group">
@@ -51,13 +51,13 @@
 		<fieldset class="form-group">
 			<label for="preco">Preço do produto</label> <input type="number"
 				step="0.10" class="form-control" id="preco" name="produto.preco"
-				placeholder="Digite o Preço do produto" value="${produto.preco }">
+				placeholder="Digite o Preço do produto" min="0" value="${produto.preco }">
 			<small class="text-muted">Campo obrigatório</small>
 		</fieldset>
 		<fieldset class="form-group">
 			<label for="descricao">Descrição do produto</label>
 			<textarea class="form-control" id="descricao"
-				name="produto.descricao" rows="3">${produto.descricao }</textarea>
+				name="produto.descricao" maxlength="40" rows="3">${produto.descricao }</textarea>
 			<small class="text-muted">Campo obrigatório</small>
 		</fieldset>
 		<!-- <fieldset class="form-group">
