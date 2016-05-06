@@ -16,6 +16,7 @@
 		<property name="format_sql">true</property>
 
 		<mapping class="br.com.loja.modelo.Produto" />
+		<mapping class="br.com.loja.modelo.Usuario" />
 	</session-factory>
 
 </hibernate-configuration>

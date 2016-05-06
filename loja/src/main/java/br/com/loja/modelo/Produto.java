@@ -1,5 +1,7 @@
 package br.com.loja.modelo;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,7 +33,7 @@ public class Produto {
     /** The preco. */
     @NotNull (message = "O preço deve ser preenchido!")
     @DecimalMin(value = "1", message = "O produto não pode ser grátis")
-    private Double preco;
+    private BigDecimal preco;
 
     /**
      * Gets the id.
@@ -92,7 +94,7 @@ public class Produto {
      *
      * @return the preco
      */
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
@@ -101,7 +103,7 @@ public class Produto {
      *
      * @param preco the new preco
      */
-    public void setPreco(Double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 

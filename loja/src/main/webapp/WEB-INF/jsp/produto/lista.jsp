@@ -23,7 +23,7 @@
 						<th>Nome</th>
 						<th>Descrição</th>
 						<th>Preço</th>
-						<th>Comprar</th>
+						<th>Quantidade</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -43,15 +43,21 @@
 									<button name="comprar" class="btn btn-success" type="submit">Comprar</button>
 								</form>
 							</td>
-							<td><a class="btn btn-primary"
-								href="<c:url value="/produtos/${produto.id}"/>"><span
-									class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
-									Editar</a></td>
-							<td>
-							<form action="<c:url value="/produtos/${produto.id}"/>" method="POST">
-							<button class="btn btn-danger" name="_method" value="DELETE"><span
-									class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
-									Remover</button></form></td>
+							<c:if test="${usuarioWeb.logado }">
+								<td><a class="btn btn-primary"
+									href="<c:url value="/produtos/${produto.id}"/>"><span
+										class="glyphicon glyphicon glyphicon-edit" aria-hidden="true"></span>
+										Editar</a></td>
+								<td>
+									<form action="<c:url value="/produtos/${produto.id}"/>"
+										method="POST">
+										<button class="btn btn-danger" name="_method" value="DELETE">
+											<span class="glyphicon glyphicon glyphicon-trash"
+												aria-hidden="true"></span> Remover
+										</button>
+									</form>
+								</td>
+							</c:if>
 						</tr>
 					</c:forEach>
 				</tbody>

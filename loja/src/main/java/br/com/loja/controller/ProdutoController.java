@@ -10,6 +10,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.Validator;
 import br.com.caelum.vraptor.view.Results;
+import br.com.loja.custom.annotations.Restrito;
 import br.com.loja.dao.ProdutoDAO;
 import br.com.loja.modelo.Produto;
 
@@ -42,6 +43,7 @@ public class ProdutoController {
     /**
      * Formulario.
      */
+    @Restrito
     @Get("/produtos/novo")
     public void formulario() {
     }
@@ -90,6 +92,7 @@ public class ProdutoController {
      *
      * @param produto the produto
      */
+    @Restrito
     @Post("/produtos")
     public void adiciona(Produto produto) {
         validator.validate(produto);
@@ -104,6 +107,7 @@ public class ProdutoController {
      * @param id the id
      * @return the produto
      */
+    @Restrito
     @Get("/produtos/{id}")
     public Produto edita(Long id) {
         return dao.buscaPorId(id);
@@ -114,6 +118,7 @@ public class ProdutoController {
      *
      * @param produto the produto
      */
+    @Restrito
     @Put("/produtos/{produto.id}")
     public void altera(Produto produto) {
         dao.edit(produto);
@@ -125,6 +130,7 @@ public class ProdutoController {
      *
      * @param id the id
      */
+    @Restrito
     @Delete("/produtos/{id}")
     public void remove(Long id) {
         Produto produto = dao.buscaPorId(id);

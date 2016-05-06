@@ -66,19 +66,54 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover, li.menu-item>
 	left: 0;
 	right: 0;
 	margin: auto;
+	margin-top: -20px;
+	margin-left: -20px;
 }
 
-.cart-li::after {
-	content: attr(data-content) ' 0';
+.cart-li> .itens-qtd {
+    color: white;
+    background-color: #6CD66C;
+    border-radius: 50%;
+    padding: 0px 6px;
+    position: relative;
+    float: right;
+    margin-left: -6px;
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.search-menu-cart {
+	float: left;
+	margin-right: -6px;
+	margin-top: 15px;
+	background-color: rgb(108, 214, 108);
 	color: white;
+	border-radius: 50px;
+	padding: 2px;
+}
+
+.valor-total, .span-cart {
+	font-size: 13px;
 	font-weight: bold;
-	background-color: #6CD66C;
-	border-radius: 50%;
-	padding: 1px 7px;
-	position: relative;
-	float: right;
-	margin-left: -11px;
-	margin-top: -5px;
+	color: #156F17;
+}
+
+.span-cart {
+	text-align: center;
+	font-size: 11px;
+	margin-left: 34px;
+}
+
+.search-menu-cart:hover {
+	color: white;
+}
+
+.search-menu-cart>.material-icons {
+	font-size: 18px !important;
+}
+
+.navbar-right .dropdown-menu {
+	margin-right: -50px !important;
 }
 
 .slide-tab {
@@ -99,6 +134,22 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover, li.menu-item>
 	background-color: #FFA000 !important;
 }
 
+.new-user-form {
+	max-width: 600px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.qtde {
+	border: 0;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3c763d;
+}
+
 .ripple {
 	width: 0;
 	height: 0;
@@ -109,6 +160,10 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover, li.menu-item>
 	transform: scale(0);
 	position: absolute;
 	opacity: 1;
+}
+
+.finalizar-compra-voltar {
+	float: right;
 }
 
 .rippleEffect {

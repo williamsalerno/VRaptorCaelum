@@ -9,7 +9,7 @@ public class Item {
     private Produto produto;
 
     /** The quantidade. */
-    private Integer quantidade;
+    private String quantidade;
 
     /**
      * Gets the produto.
@@ -34,7 +34,7 @@ public class Item {
      *
      * @return the quantidade
      */
-    public Integer getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
@@ -43,7 +43,7 @@ public class Item {
      *
      * @param quantidade the new quantidade
      */
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 

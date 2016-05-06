@@ -8,12 +8,5 @@ $(document).ready(function () {
     }).parent().addClass('ativo');
 });
 </script>
-
-<script type="text/javascript">
-	$('#comprar').click(function() {
-		var content = $('.span-cart').html();
-		$('.cart-li').attr('data-content', content);
-	});
-</script>
 </body>
 </html>

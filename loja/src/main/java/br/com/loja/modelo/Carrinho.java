@@ -1,12 +1,13 @@
 package br.com.loja.modelo;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.caelum.vraptor.ioc.SessionScoped;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Carrinho.
  */
@@ -18,7 +19,10 @@ public class Carrinho {
     private List<Item> itens = new ArrayList<Item>();
 
     /** The total. */
-    private Double total = 0.0;
+    private BigDecimal total = new BigDecimal("0.0");
+
+    /** The total itens. */
+    private BigInteger totalItens = new BigInteger("0");
 
     /**
      * Gets the itens.
@@ -43,7 +47,7 @@ public class Carrinho {
      *
      * @return the total
      */
-    public Double getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
@@ -52,10 +56,10 @@ public class Carrinho {
      *
      * @param total the new total
      */
-    public void setTotal(Double total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
-    
+
     /**
      * Adiciona.
      *
@@ -63,7 +67,8 @@ public class Carrinho {
      */
     public void adiciona(Item item) {
         this.itens.add(item);
-        this.total += item.getProduto().getPreco() * item.getQuantidade();
+        this.total = item.getProduto().getPreco().multiply(new BigDecimal(item.getQuantidade())).add(this.total);
+        this.totalItens = this.totalItens.add(new BigInteger(item.getQuantidade()));
     }
 
     /**
@@ -71,10 +76,10 @@ public class Carrinho {
      *
      * @return the total de itens
      */
-    public Integer getTotalDeItens() {
-        return this.itens.size();
+    public BigInteger getTotalDeItens() {
+        return this.totalItens;
     }
-    
+
     /**
      * Remove.
      *
@@ -82,6 +87,7 @@ public class Carrinho {
      */
     public void remove(int indiceItem) {
         Item removido = itens.remove(indiceItem);
-        total -= removido.getProduto().getPreco() * removido.getQuantidade();
+        this.total = this.total.subtract(new BigDecimal(removido.getQuantidade()).multiply(removido.getProduto().getPreco()));
+        this.totalItens = this.totalItens.subtract(new BigInteger(removido.getQuantidade()));
     }
 }
