@@ -52,8 +52,8 @@ public class ProdutoController {
      * Index.
      */
     @Get("/index")
-    public void index() {
-        
+    public List<Produto> index() {
+        return dao.todosProdutos();
     }
 
     /**

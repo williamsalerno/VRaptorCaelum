@@ -90,6 +90,16 @@ public class ProdutoDAO {
     public List<Produto> busca(String nome) {
         return session.createCriteria(Produto.class).add(Restrictions.ilike("nome", nome, MatchMode.ANYWHERE)).list();
     }
+    
+    /**
+     * Todos produtos.
+     *
+     * @return the list
+     */
+    @SuppressWarnings("unchecked")
+    public List<Produto> todosProdutos(){
+        return (List<Produto>) session.createCriteria(Produto.class).list();
+    }
 
     /**
      * Recarrega.

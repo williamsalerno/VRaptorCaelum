@@ -6,12 +6,19 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Minha primeira aplicação JavaWEB</title>
+	
+	<!-- Stylesheets -->
 	<link href="<c:url value="/css/style.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/slider.config.css"></c:url>" rel="stylesheet">
 	<link href="<c:url value="/css/bootstrap.css"></c:url>" rel="stylesheet">
 	<link href="<c:url value="/css/bootstrap.min.css"></c:url>" rel="stylesheet">
 	<link href="<c:url value="/css/jquery.autocomplete.css"></c:url>" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="<c:url value="/css/bootstrap.min.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/hover.css"></c:url>" rel="stylesheet">
+	<link href="<c:url value="/css/hover-min.css"></c:url>" rel="stylesheet">
+	
+	<!-- Scripts -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script type="text/javascript" src="<c:url value="/js/bootstrap.js"></c:url>"></script>
 	<script type="text/javascript" src="<c:url value="/js/jquery.hint.min.js"></c:url>"></script>

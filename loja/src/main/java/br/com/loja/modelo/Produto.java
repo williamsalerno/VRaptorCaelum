@@ -27,7 +27,7 @@ public class Produto {
     
     /** The descricao. */
     @NotNull (message = "A descrição deve ser preenchida!")
-    @Length(max = 40, message = "A descrição deve conter no máximo 40 caracteres!")
+    @Length(max = 200, message = "A descrição deve conter no máximo 200 caracteres!")
     private String descricao;
     
     /** The preco. */

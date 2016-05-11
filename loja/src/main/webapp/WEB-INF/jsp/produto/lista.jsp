@@ -20,10 +20,11 @@
 				<thead>
 					<tr>
 						<th>Código</th>
+						<th>Imagem</th>
 						<th>Nome</th>
 						<th>Descrição</th>
 						<th>Preço</th>
-						<th>Quantidade</th>
+						<th class="qtdComprar">Quantidade</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -32,11 +33,12 @@
 					<c:forEach items="${produtoList}" var="produto">
 						<tr>
 							<td>${produto.id }</td>
+							<td><img class="product-thumbnail" src="<c:url value="/produtos/${produto.id }/imagem"/>" width="70" height="100" /></td>
 							<td>${produto.nome }</td>
 							<td>${produto.descricao }</td>
 
 							<td>${produto.preco }</td>
-							<td>
+							<td style="min-width: 202px;">
 								<form action="<c:url value="/carrinho"/>" method="POST">
 									<input type="hidden" name="item.produto.id" value="${produto.id }">
 									<input type="number" step="1" class="qtde" name="item.quantidade" value="1"/>

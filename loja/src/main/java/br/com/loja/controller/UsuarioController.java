@@ -94,6 +94,6 @@ public class UsuarioController {
         }
         validator.onErrorUsePageOf(this).novo();
         userDAO.adiciona(usuario);
-        result.redirectTo(ProdutoController.class).lista();
+        result.redirectTo(this).loginForm();
     }
 }

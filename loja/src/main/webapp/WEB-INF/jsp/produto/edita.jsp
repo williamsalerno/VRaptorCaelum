@@ -51,11 +51,6 @@
 				name="produto.descricao" rows="3">${produto.descricao }</textarea>
 			<small class="text-muted">Campo obrigatório</small>
 		</fieldset>
-		<!-- <fieldset class="form-group">
-		    <label for="exampleInputFile">File input</label>
-		    <input type="file" class="form-control-file" id="exampleInputFile">
-		    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-		  </fieldset>  -->
 		<!-- <div class="radio">
 		    <label>
 		      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -79,12 +74,30 @@
 		      <input type="checkbox"> Check me out
 		    </label>
 		  </div>-->
-		<form action="<c:url value="/produtos/${produto.id }"/>" method="POST">
-			<button type="submit" class="btn btn-primary" name="_method" value="PUT">
+		<button type="submit" class="btn btn-primary" name="_method"
+			value="PUT">
+			<span class="glyphicon glyphicon glyphicon-floppy-save"
+				aria-hidden="true"></span> Salvar alterações
+		</button>
+	</form>
+	<br /> <br />
+	<form class="forms-alter"
+		action="<c:url value="/produtos/${produto.id }/imagem"/> "
+		method="POST" enctype="multipart/form-data">
+		<h3>Adicionar uma imagem para o produto</h3>
+		<br/>
+		<img class="product-thumbnail" src="<c:url value="/produtos/${produto.id }/imagem"/>" width="70" height="100" />
+		<fieldset class="form-group">
+			<label for="exampleInputFile">Imagem do produto</label> <input
+				type="file" class="form-control-file" name="imagem" id="exampleInputFile">
+			<small class="text-muted">Carregar imagem do produto: GIF,
+				JPG ou PNG.</small> <br />
+			<br />
+			<button type="submit" class="btn btn-primary">
 				<span class="glyphicon glyphicon glyphicon-floppy-save"
-					aria-hidden="true"></span> Salvar alterações
+					aria-hidden="true"></span> Salvar imagem
 			</button>
-		</form>
+		</fieldset>
 	</form>
 </div>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>
