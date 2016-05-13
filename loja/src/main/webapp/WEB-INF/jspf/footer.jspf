@@ -1,12 +1,77 @@
+<footer>
+	<div class="container">
+		<div class="footer-row">
+			<div class="subscribe">
+				<h2>Sign up for newsletter</h2>
+				<form>
+					<input type="email" id="inscrever" name="subscribe"
+						class="subscribe-inpt" /><button class="subscribe-btn hvr-sweep-to-left" type="submit" id="btnInscrever">Subscribe</button>
+					<script type="text/javascript">
+						$("#inscrever").puts(
+								"Se inscreva para receber ofertas...");
+					</script>
+				</form>
+			</div>
+		</div>
+		<div class="footer-row row-items">
+			<div class="footer-row-item">
+				<div class="about-us">
+					<h2>About Us</h2>
+					<p>Lorem ipsum dolor sit amet, cu nam expetenda ocurreret. Vis
+						graeci delicatissimi no, putant noluisse mea ut. Fuisset
+						scribentur sea ne. Vix ad quod iisque fuisset.</p>
+				</div>
+			</div>
+			<div class="footer-row-item">
+				<div class="useful-links">
+					<h2>Useful Links</h2>
+					<ul>
+						<li><a href="#">Início</a></li>
+						<li><a href="#">Listar produtos</a></li>
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+						<li><a href="#">Entrar</a></li>
+						<li><a href="#">Cadastrar</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-row-item">
+				<div class="about-us">
+					<h2>About Us</h2>
+					<p>Lorem ipsum dolor sit amet, cu nam expetenda ocurreret. Vis
+						graeci delicatissimi no, putant noluisse mea ut. Fuisset
+						scribentur sea ne. Vix ad quod iisque fuisset.</p>
+				</div>
+			</div>
+			<div class="footer-row-item">
+				<div class="about-us">
+					<h2>About Us</h2>
+					<p>Lorem ipsum dolor sit amet, cu nam expetenda ocurreret. Vis
+						graeci delicatissimi no, putant noluisse mea ut. Fuisset
+						scribentur sea ne. Vix ad quod iisque fuisset.</p>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="footer-row copyright">
+			<p>Copyright &copy;2016 Victor Prado. All rights reserved</p>
+		</div>
+	</div>
+</footer>
 <!-- Adiciona a classe ativo no menu-item que estiver ativo -->
 <script type="text/javascript">
-$(document).ready(function () {
-    var url = window.location;
-    $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
-    $('ul.nav a').filter(function() {
-         return this.href == url;
-    }).parent().addClass('ativo');
-});
+	$(document).ready(function() {
+		var url = window.location;
+		$('li.menu-item a[href="' + url + '"]').parent().addClass('active');
+		$('li.menu-item a').filter(function() {
+			return this.href == url;
+		}).parent().addClass('ativo');
+	});
 </script>
 </body>
 </html>

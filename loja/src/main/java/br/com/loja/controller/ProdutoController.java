@@ -53,7 +53,7 @@ public class ProdutoController {
      */
     @Get("/index")
     public List<Produto> index() {
-        return dao.todosProdutos();
+        return dao.allProductsWithLimit();
     }
 
     /**

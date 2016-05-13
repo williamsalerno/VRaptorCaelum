@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
@@ -108,6 +109,16 @@ public class ProdutoDAO {
      */
     public void recarrega(Produto produto) {
         session.refresh(produto);
+    }
+
+    /**
+     * All products with limit.
+     *
+     * @return the list
+     */
+    @SuppressWarnings("unchecked")
+    public List<Produto> allProductsWithLimit() {
+        return (List<Produto>) session.createCriteria(Produto.class).addOrder(Order.asc("id")).list();
     }
 
 }
