@@ -26,7 +26,7 @@
 								<c:if test="${usuarioWeb.logado }">
 									<a style="margin: 0 5px;"
 										href="<c:url value="/produtos/${produto.id }"/>"
-										name="comprar" class="btn btn-default">Editar  <span
+										name="comprar" class="btn btn-default">Editar <span
 										class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
 								</c:if>
 								<form style="float: left;" action="<c:url value="/carrinho"/>"
@@ -59,7 +59,7 @@
 				});
 			});
 
-			$('.thumbs').mouseenter(function() {
+			$('.thumbs').mouseover(function() {
 				$('.caption', this).animate({
 					marginTop : '-87%'
 				}, 500)
@@ -70,6 +70,13 @@
 				}, 500)
 			});
 		</script>
+	</div>
+</section>
+<section id="before-footer">
+	<div class="container">
+		<div class="keep-contact">
+			<h1>Eai people!</h1>
+		</div>
 	</div>
 </section>
 <%@ include file="/WEB-INF/jspf/footer.jspf"%>

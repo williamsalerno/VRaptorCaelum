@@ -139,24 +139,24 @@ li.menu-item>a:hover, .dropdown-toggle:hover, .navbar-brand:hover, li.menu-item>
 
 .shopping-cart:after {
 	position: absolute;
-    top: -6px;
-    left: 60px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-    content: '';
+	top: -6px;
+	left: 60px;
+	display: inline-block;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #fff;
+	border-left: 6px solid transparent;
+	content: '';
 }
 
 .dropdown-menu:after {
 	position: absolute;
-    top: -6px;
-    left: 60px;
-    display: inline-block;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #fff;
-    border-left: 6px solid transparent;
-    content: '';
+	top: -6px;
+	left: 60px;
+	display: inline-block;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #fff;
+	border-left: 6px solid transparent;
+	content: '';
 }
 
 .cart-li>.itens-qtd {
@@ -381,6 +381,7 @@ footer {
 	margin: 0 5px;
 	font-size: 15px;
 	font-weight: bold;
+	outline: 0;
 }
 
 .subscribe-btn {
@@ -456,6 +457,12 @@ footer {
 
 #produtos {
 	margin-top: 57px;
+}
+
+#before-footer {
+	background-color: white;
+	padding: 30px;
+	width: 100%;
 }
 
 @media ( min-width : 768px) {
